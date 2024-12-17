@@ -1,0 +1,161 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>User Management System</title>   
+  <style>  
+    * {  
+      margin: 0;  
+      padding: 0;  
+    }  
+    
+    html, body {  
+      height: 100%;  
+      font-family: Century Gothic;  
+      background-color:  #016335;   
+      color: #0fe255;  
+      display: flex;  
+      justify-content: center;  
+      align-items: flex-start;  
+      padding: 20px;  
+    }  
+
+    .metrics {  
+      text-align: center;
+      color: #0fe255;  
+      background: #012e10;  
+      padding: 20px;  
+      border-radius: 10px;  
+      width: 200px;
+      box-shadow: 0 0 5px #000000, 0 0 20px #000000;   
+    }  
+
+    .container {  
+      max-width: 8  0%;  
+      padding: 20px;  
+      background: rgba(255, 255, 255, 0.1);  
+      border-radius: 10px;  
+      box-shadow: 0 0 5px #000000, 0 0 20px #000000;   
+      margin-right: 20px;   
+    }  
+
+    h1, h2 {  
+      text-align: center;  
+      margin-bottom: 20px;
+      background-color: #012e10;  
+    }  
+
+    .form-container {  
+      margin-bottom: 15px;  
+    }  
+
+    input, select, button {  
+      width: 98%;  
+      padding: 10px;  
+      margin: 10px 0;  
+      border: 1px solid #070244;  
+      border-radius: 4px;  
+      background: rgba(255, 255, 255, 0.5);  
+      color: black;  
+    }  
+
+    button {  
+      background-color: #4bec81;  
+      color: #03471a;  
+      cursor: pointer;  
+      transition: 0.3s;  
+    }  
+
+    button:hover {  
+      background-color: #04460d;  
+      color: #4cf871;  
+    }  
+
+    table {  
+      width: 100%;  
+      border-collapse: collapse;
+      table-layout: fixed;  
+      margin-top: 20px;  
+      background: rgba(255, 255, 255, 0.1);  
+      border-radius: 10px;  
+    }  
+
+    th, td {  
+      padding: 10px;  
+      text-align: left;
+      aspect-ratio: fixed;  
+      border-bottom: 1px solid #070244;  
+    }  
+
+    th {  
+      background-color: rgba(255, 255, 255, 0.2);  
+    }  
+
+    input#search {  
+      margin-bottom: 10px;  
+      width: 30%;  
+    }  
+
+    tr.new-user {  
+      background-color: #013364;  
+    }  
+
+    .new-label {  
+      color: red;  
+      font-weight: bold;  
+    }  
+  </style>  
+</head>  
+<body>  
+  <div class="container">  
+    <h1>User Management System</h1>  
+
+    <!-- User Registration Form -->  
+    <div class="form-container">  
+      <h2>Add New User</h2>  
+      <form id="userForm">  
+        <input type="text" id="name" placeholder="Name" required>  
+        <input type="email" id="email" placeholder="Email" required>  
+        <input type="text" id="phone" placeholder="Phone Number" required>  
+        <select id="role">  
+          <option value="Admin">Admin</option>  
+          <option value="Editor">Editor</option>  
+          <option value="Viewer">Viewer</option>  
+        </select>  
+        <button type="submit">Add User</button>  
+      </form>  
+    </div>  
+
+    <!-- User List -->  
+    <div class="user-list">  
+      <h2>Users</h2>  
+      <input type="text" id="search" placeholder="Search by Name or Email">  
+      <table id="usersTable">  
+        <thead>  
+          <tr>  
+            <th>Name</th>  
+            <th>Email</th>  
+            <th>Role</th>  
+            <th>Status</th>  
+            <th>Actions</th>  
+          </tr>  
+        </thead>  
+        <tbody>  
+          <!-- Users will be populated here -->  
+        </tbody>  
+      </table>  
+    </div>  
+  </div>  
+
+  <!-- Metrics Display -->  
+  <div class="metrics">  
+    <h2>User Metrics</h2>  
+    <p>Total Users: <span id="totalUsers">0</span></p>  
+    <p>Active Users: <span id="activeUsers">0</span></p>  
+    <p>Inactive Users: <span id="inactiveUsers">0</span></p>  
+  </div>  
+
+  <script src="admin.js"></script>  
+</body>  
+</html>
